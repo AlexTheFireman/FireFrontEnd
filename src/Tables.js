@@ -1,5 +1,4 @@
-import { Component } from "react";
 
-export class Tables extends Component {
+export class Tables  {
 
 }
