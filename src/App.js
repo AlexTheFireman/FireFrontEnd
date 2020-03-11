@@ -10,10 +10,11 @@ import { MyNavbar } from './MyNavbar.js';
 import { File } from './File.js';
 import { Tables } from './Tables';
 
+
 export default function App() {
     return (
         <BrowserRouter>
-            <div className="container" bordered>
+            <div className="container">
                 <MyNavbar/>
                 <Switch>
                     <Route path='/file' component={File}/>
