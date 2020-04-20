@@ -5,7 +5,7 @@ export default function AppBigTable () {
     const [fires, setFires] = useState ([]);
 
     useEffect(() => {
-        fetch("/api/fires")
+        fetch("/api/get/")
             .then(response => response.json())
             .then(data => {
                 setFires(data);
