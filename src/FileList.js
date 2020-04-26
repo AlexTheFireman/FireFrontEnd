@@ -1,31 +1,51 @@
 import React, { useState, useEffect } from "react";
-import  Table  from './Table.js';
+import Table  from './Table.js';
 import {Route} from "react-router-dom";
 import Link from "react-router-dom/modules/Link";
+import Switch from "react-bootstrap/cjs/Switch";
 
 export default function FileList () {
     const [files, setFiles] = useState([]);
 
     useEffect((api) => {
-        fetch("/api/get/{fileName}")
+        fetch("/api/get/all")
             .then(response => response.json())
             .then(data => {
                 setFiles(data);
             });
     }, []);
 
-    const body = files.map((file, fileName) => {
-        return (
-            <tr key={fileName}>
-                <td className="bordered">
-                    <Link to={'/tables/:fileName'}>{file}</Link>/>
-                    </td>
-                /*<td className="bordered">{file}/></td>*/
+    const FilesAPI = {
+        files,
+        all: function() { return this.files },
+        get: function(name) {
+            const isFile = f => f.fileName === name
+            return this.files.find(isFile)
+        }
 
-            </tr>)
+    };
 
-    })
+    const FullList = () => (
+        <div>
+            <ul>
+                {
+                    FilesAPI.all().map(f => (
+                        <li key={f.fileName}>
+                            <Link to={'/tables/${f.fileName}'}>{f.fileName}</Link>/>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
 
+    );
+
+    const body = () => (
+        <Switch>
+            <Route exact path='/fileList' component={FullList}/>
+            <Route path='/tables/:fileName' component={Table}/>
+        </Switch>
+    );
 
     return (
         <table className="table table-bordered table-sm table-hover table-striped">
@@ -39,8 +59,12 @@ export default function FileList () {
             </tbody>
         </table>
     );
-
 }
+
+
+
+
+
 
 
 

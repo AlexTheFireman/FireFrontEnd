@@ -4,7 +4,7 @@ export default function Table () {
     const [fires, setFires] = useState ([]);
 
     useEffect((api) => {
-        fetch("/api/get/:fileName") //Вот эта строка вызывает вопросы - как передать в fetch fileName?
+        fetch("/api/get/${fileName}")
             .then(response => response.json())
             .then(data => {
                 setFires(data);
