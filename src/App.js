@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 import { MyNavbar } from './MyNavbar.js';
 import { File } from './File.js';
-import  Table  from './Table.js';
 import BigTable from './BigTable';
 import FileList from './FileList';
+import Table from "./Table";
+
 
 export default function App() {
     return (
@@ -18,8 +19,8 @@ export default function App() {
             <div>
                 <MyNavbar/>
                <Switch>
-                    <Route exact path='/file' component={File}/>
-                    <Route path='/tables' component={Table}/>
+                    <Route path='/file' component={File}/>
+                    <Route path='/tables/:name' component={Table}/>
                     <Route path='/big' component={BigTable}/>
                     <Route path='/fileList' component={FileList}/>
                 </Switch>
