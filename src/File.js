@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class File extends Component {
+export default function File () {
 
-    render(){
+
         return (
             <div>
                 <form method="POST" encType="multipart/form-data" action="/api/upload">
@@ -19,7 +19,7 @@ export class File extends Component {
                 </form>
             </div>
         )
-    }
+
 }
 
-export default File
+
