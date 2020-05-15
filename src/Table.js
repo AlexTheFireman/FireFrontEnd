@@ -11,7 +11,7 @@ export default function Table (props) {
                 .then(data => {
                     setFires(data);
                 });
-        }, []);
+        }, [props.match.params.name]);
 
     return (
         <table className="table table-bordered table-sm table-hover table-striped">
