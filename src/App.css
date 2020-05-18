@@ -2,7 +2,7 @@
   border: 1px solid black;
 }
 
-.example-2 .btn-tertiary{
+.btn-tertiary{
   color:#555;
   padding:0;
   line-height:40px;
@@ -12,12 +12,12 @@
   border:2px solid #555
 }
 
-.example-2 .btn-tertiary:hover,.example-2 .btn-tertiary:focus{
+.btn-tertiary:hover,.example-2 .btn-tertiary:focus{
   color:#888;
   border-color:#888
 }
 
-.example-2 .input-file{
+.input-file{
   width:.1px;
   height:.1px;
   opacity:0;
@@ -26,7 +26,7 @@
   z-index:-1
 }
 
-.example-2 .input-file + .js-labelFile{
+.input-file + .js-labelFile{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
@@ -34,11 +34,11 @@
   cursor:pointer
 }
 
-.example-2 .input-file + .js-labelFile .icon:before{
+.input-file + .js-labelFile .icon:before{
   content:"\f093"
 }
 
-.example-2 .input-file + .js-labelFile.has-file .icon:before{
+.input-file + .js-labelFile.has-file .icon:before{
   content:"\f00c";
   color:#5AAC7B
 }

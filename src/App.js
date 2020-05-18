@@ -6,11 +6,11 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import { MyNavbar } from './MyNavbar.js';
-import { File } from './File.js';
-import BigTable from './BigTable';
-import FileList from './FileList';
-import Table from "./Table";
+import MyNavbar from './MyNavbar.js';
+import File from './File.js';
+import BigTable from './BigTable.js';
+import FileList from './FileList.js';
+import Table from "./Table.js";
 
 
 export default function App() {

@@ -2,7 +2,6 @@ import React from "react";
 
 export default function File () {
 
-
         return (
             <div>
                 <form method="POST" encType="multipart/form-data" action="/api/upload">

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 
-export default function AppBigTable () {
+export default function BigTable () {
     const [fires, setFires] = useState ([]);
 
-    useEffect(() => {
-        fetch("/api/get/")
+    useEffect((api) => {
+        fetch("/api/get/ALL.xlsx")
             .then(response => response.json())
             .then(data => {
                 setFires(data);
