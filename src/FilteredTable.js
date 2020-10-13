@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
-import { Link } from 'react-router-dom';
+import ReactSelect from "./ReactSelect";
 
-export default function POSTTable (props) {
+export default function FilteredTable (props) {
 
     const [fires, setFires] = useState ([]);
-
-        useEffect((api) => {
-            const { name }  = props.match.params.param.fileName;
-            const encoded = encodeURI(`/api/get/${name}`);
+    const { name, fireStation, message, district, destination, whereWasTheFire }  = props.match.params;
+    const objectWithProperties = { fireStation, message, district, destination, whereWasTheFire };
+    const encoded = encodeURI(`/api/get/${name}`);
+    useEffect((api) => {
+        if (checkProperties(objectWithProperties)) {
             fetch(encoded, {
                 method: "POST",
-                body: {
-                    fireStation: props.match.params.param.fireStation,
-                    message: props.match.params.param.message
-                },
+                body: JSON.stringify({
+                    fireStation,
+                    message,
+                    district,
+                    destination,
+                    whereWasTheFire
+                }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
@@ -24,21 +28,66 @@ export default function POSTTable (props) {
                 .then(data => {
                     setFires(data);
                 });
-        }, [props.match.params]);
+            fetchTable({setFires, name})
+        } else {
+            fetch(encoded)
+                .then(response => response.json())
+                .then(data => {
+                    setFires(data);
+                });
+        }
+    }, [name]);
 
-    const body = fires.map(fire => <TableBody fire={fire} key={fire.id} />);
-
+    const body = fires.map((fire, index) => <TableBody fire={fire} key={index} />);
+    const result = <h3>Итого выездов: {fires.length}</h3>;
     return (
-
-        <table className="table table-bordered table-sm table-hover table-striped">
-            <Link to ={{
-                pathname: '/filterForm',
-                param: {fileName: props.match.params}
-            }}>Filter</Link>
-            <TableHead />
-            <tbody>
-                { body }
-            </tbody>
-        </table>
+        <>
+            <div class="box">
+                <div class="box1">
+                    <ReactSelect onSubmit={(state) => fetchTable({setFires, name, ...state})}/>
+                </div>
+                <div class="box2" >
+                    {result}
+                </div>
+            </div>
+            <table className="table-sm table-hover table-striped">
+                <TableHead class="head" />
+                <tbody class="main">
+                    { body }
+                </tbody>
+            </table>
+        </>
     )
 }
+
+const fetchTable = ({fireStation = "", message = "", district = "", destination = "", whereWasTheFire = "",
+                        name, setFires}) => {
+    const encoded = encodeURI(`/api/get/${name}`);
+    fetch(encoded, {
+        method: "POST",
+        body: JSON.stringify({
+            fireStation,
+            message,
+            district,
+            destination,
+            whereWasTheFire
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.length);
+            setFires(data);
+        });
+
+}
+
+function checkProperties(obj) {
+    for(let key in obj){
+        if (obj[key] !== null && obj[key] !== '')
+            return false
+    }
+}
+

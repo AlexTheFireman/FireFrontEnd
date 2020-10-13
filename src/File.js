@@ -1,24 +1,23 @@
 import React from "react";
 
-export default function File () {
+export default function File (props) {
 
-        return (
-            <div>
-                <form method="POST" encType="multipart/form-data" action="/api/upload">
-                    <table>
-                        <tr>
-                            <td>File to upload:</td>
-                            <td><input type="file" name="file"/></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" value="Upload"/></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        )
-
+    return (
+        <div align="center">
+            <form method="POST" encType="multipart/form-data" action="/api/upload">
+                <table>
+                    <tr>
+                        <td>Выберите файл:</td>
+                        <td><input type="file" name="file"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Загрузить"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    )
 }
 
 
