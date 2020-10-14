@@ -63,21 +63,6 @@ class File extends Component {
 
 export default File
 
-    
-// render() {
-//     return (
-//         <form method="POST" encType="multipart/form-data" action="/api/upload">
-//             <table>
-//                 <tr>
-//                     <td>Выберите файл:</td>
-//                     <td><input type="file"/></td>
-//                 </tr>
-//                 <tr>
-//                     <td></td>
-//                     <td><input type="submit" value="Загрузить"/></td>
-//                 </tr>
-//             </table>
-//         </form>
-//     )
-// }  
+
+   
 
