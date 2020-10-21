@@ -29,32 +29,7 @@ class File extends Component {
     };
 
     render() {
-        const status = {
-            FILE_ALREADY_EXIST: "Файл с таким именем уже существует в базе данных",
-            SUCCESS: 'winter',
-            CHECK_FILE_EXTENSION: 'spring',
-            NO_FILE_SELECTED: 'autumn'
-        };
-
-        let warning;
-
-        switch (this.state.responseFromServer) {
-            case status.FILE_ALREADY_EXIST:
-                warning = <h1>status.FILE_ALREADY_EXIST</h1>;
-                break;
-            case status.SUCCESS:
-                warning = <h1>Файл успешно загружен</h1>;
-                break;
-            case status.CHECK_FILE_EXTENSION:
-                warning = <h1>Принимаются файлы только с расширением "xlsx" или "xls".</h1>;
-                break;
-            case status.NO_FILE_SELECTED:
-                warning = <h1>Файл не выбран</h1>;
-                break;
-            default:
-                break;
-            }
-                return (
+              return (
                     <div align="center">
                         <table>
                             <tr>
@@ -68,9 +43,9 @@ class File extends Component {
                                 </td>
                             </tr>
                         </table>
-                        <td>{warning}</td>
+                        <td>{this.state.responseFromServer}</td>
                     </div>
-                );
+              );
         }
     }
 
