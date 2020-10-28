@@ -1,5 +1,5 @@
 import React from 'react';
-
+import data from './headArray.json';
 /**
  * @return {boolean}
  */
@@ -44,47 +44,51 @@ export default function Table ({fires}) {
             <td>{fire.comment}</td>
         </tr>
     });
+    const head = data.map((column, j) => {
+        return <tr className="bordered" key={j}>
+            <th>{column.id}</th>
+            <th>{column.date}</th>
+            <th>{column.message}</th>
+            <th>{column.addressObjectFireFeature}</th>
+            <th>{column.district}</th>
+            <th>{column.fireStation}</th>
+            <th>{column.object1}</th>
+            <th>{column.object2}</th>
+            <th>{column.rescueWorks}</th>
+            <th>{column.amountOfRescuedPeople}</th>
+            <th>{column.amountOfEvacuatedPeople}</th>
+            <th>{column.fireChiefRank}</th>
+            <th>{column.fireChiefName}</th>
+            <th>{column.amountOfSmokeGroups}</th>
+            <th>{column.smokeTime}</th>
+            <th>{column.extinguishingAgents}</th>
+            <th>{column.firstEngine}</th>
+            <th>{column.secondEngine}</th>
+            <th>{column.thirdEngine}</th>
+            <th>{column.firstReserve}</th>
+            <th>{column.secondReserve}</th>
+            <th>{column.firstSquadron}</th>
+            <th>{column.secondSquadron}</th>
+            <th>{column.hydrant}</th>
+            <th>{column.reportPDF}</th>
+            <th>{column.locality}</th>
+            <th>{column.fireRank}</th>
+            <th>{column.detectionTime}</th>
+            <th>{column.messageTime}</th>
+            <th>{column.arrivalTime}</th>
+            <th>{column.firstNozzleTime}</th>
+            <th>{column.localizationTime}</th>
+            <th>{column.fireLiquidationTime}</th>
+            <th>{column.totalLiquidationTime}</th>
+            <th>{column.comment}</th>
+        </tr>
+    });
 
     return (
+
         <table className="thead-inverse table-sm table-hover table-striped">
-            <thead   >
-            <tr className="bordered">
-                <th>№</th>
-                <th>Дата</th>
-                <th>Назначение сообщения</th>
-                <th>Адрес, наименование объекта и характер (пожара, загорания, происшествия), S=пожара</th>
-                <th>Район выезда</th>
-                <th>Подразделение</th>
-                <th>Объект назначения</th>
-                <th>Из них объект назначения</th>
-                <th>Проведение аварийно спасательных работ</th>
-                <th>Спасено людей (Деблокировано)</th>
-                <th>Эвакуировано</th>
-                <th>Руководитель тушения пожара (Руководитель ликвидации аварии)</th>
-                <th>ФИО</th>
-                <th>Использование ГДЗС</th>
-                <th>Время работы ГДЗС (без надписи мин.)</th>
-                <th>Применение огнетушащих веществ</th>
-                <th>1 отделение</th>
-                <th>2 отделение</th>
-                <th>3 отделение</th>
-                <th>Резерв 1 (АМГ, ОП)</th>
-                <th>Резерв 2 (АМГ, ОП)</th>
-                <th>АМГ, ОП</th>
-                <th>АМГ, (ОП)</th>
-                <th>Использование ИППВ</th>
-                <th>Донесение о пожаре формат *.pdf</th>
-                <th>Село/город</th>
-                <th>Ранг</th>
-                <th>Время обнаружения</th>
-                <th>Время сообщения</th>
-                <th>Время прибыти</th>
-                <th>Время подачи первого ствола</th>
-                <th>Время локализации с момента подачи первого ствола</th>
-                <th>Время ликвидации с момента локализации</th>
-                <th>Время ликвидации последствий пожара (учитывая проведение спец работ)</th>
-                <th>Примечание</th>
-            </tr>
+            <thead>
+            {head}
             </thead>
             <tbody>
                 {body}
