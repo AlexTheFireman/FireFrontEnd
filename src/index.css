@@ -23,6 +23,10 @@ table {
 
 }
 
+.bordered td {
+  border: 4px solid #000;
+}
+
 .box {
   display: flex;
 }

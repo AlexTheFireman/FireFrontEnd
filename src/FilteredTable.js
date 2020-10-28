@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import TableHead from "./TableHead";
-import TableBody from "./TableBody";
+import Table from "./Table";
 import ReactSelect from "./ReactSelect";
 
-export default function FilteredTable (props) {
+export default function SimpliestFilteredTable (props) {
 
     const [fires, setFires] = useState ([]);
     const { name, fireStation, message, district, destination, whereWasTheFire }  = props.match.params;
@@ -38,7 +37,6 @@ export default function FilteredTable (props) {
         }
     }, [name]);
 
-    const body = fires.map((fire, index) => <TableBody fire={fire} key={index} />);
     const result = <h3>Итого выездов: {fires.length}</h3>;
     return (
         <>
@@ -51,10 +49,8 @@ export default function FilteredTable (props) {
                 </div>
             </div>
             <table className="table-sm table-hover table-striped">
-                <TableHead class="head" />
-                <tbody class="main">
-                    { body }
-                </tbody>
+                <Table fires = {fires}/>
+
             </table>
         </>
     )
