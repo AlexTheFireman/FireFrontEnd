@@ -9,7 +9,7 @@ import {
 import MyNavbar from './MyNavbar.js';
 import File from './File.js';
 import FileList from './FileList.js';
-import FilteredTable from './tFilteredTable';
+import FilteredTable from './FilteredTable';
 export default function App() {
     return (
         <BrowserRouter>
