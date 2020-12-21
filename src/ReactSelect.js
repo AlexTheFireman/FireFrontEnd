@@ -89,6 +89,80 @@ const whereWasTheFire = [
     {value: 'На строящихся объектах не жилого назначения', label: 'На строящихся объектах не жилого назначения', group: 'whereWasTheFire'},
 ];
 
+const rescueWorks = [
+    {value: 'Спасение и эвакуация из горящего объекта', label: 'Спасение и эвакуация из горящего объекта', group: 'rescueWorks'},
+    {value: 'Вскрытие и разборка конструкций', label: 'Вскрытие и разборка конструкций', group: 'rescueWorks'},
+    {value: 'Дымоудаление', label: 'Дымоудаление', group: 'rescueWorks'},
+    {value: 'Ликвидация последствий ДТП', label: 'Ликвидация последствий ДТП', group: 'rescueWorks'},
+    {value: 'Ликвидация аварий с радиационным заражением', label: 'Ликвидация аварий с радиационным заражением', group: 'rescueWorks'},
+    {value: 'Ликвидация аварий с химическим заражением', label: 'Ликвидация аварий с химическим заражением', group: 'rescueWorks'},
+    {value: 'Ликвидация аварий с биологическим заражением', label: 'Ликвидация аварий с биологическим заражением', group: 'rescueWorks'},
+    {value: 'Ликвидация последствий террористических актов', label: 'Ликвидация последствий террористических актов', group: 'rescueWorks'},
+    {value: 'Ликвидация последствий стихийных бедствий', label: 'Ликвидация последствий стихийных бедствий', group: 'rescueWorks'},
+    {value: 'Откачка воды', label: 'Откачка воды', group: 'rescueWorks'},
+    {value: 'Подводно-технические (водолазные работы)', label: 'Подводно-технические (водолазные работы)', group: 'rescueWorks'},
+    {value: 'Оказание другой помощи населению', label: 'Оказание другой помощи населению', group: 'rescueWorks'},
+    {value: 'Ликвидация последствий аварий и происшествий на водных объектах', label: 'Ликвидация последствий аварий и происшествий на водных объектах', group: 'rescueWorks'},
+    {value: 'Ликвидация последствий техногенных аварий и происшествий (обрушение зданий, аварии на объектах производственной сферы и ЖКХ)', label: 'Ликвидация последствий техногенных аварий и происшествий (обрушение зданий, аварии на объектах производственной сферы и ЖКХ)', group: 'rescueWorks'},
+    {value: 'Пиротехнические работы', label: 'Пиротехнические работы', group: 'rescueWorks'}
+];
+
+const fireChiefRank = [
+    {value: 'РТП– помощники начальников караулов (командиры отделений)', label: 'РТП– помощники начальников караулов (командиры отделений)', group: 'fireChiefRank'},
+    {value: 'РТП – начальники караулов (смен)', label: 'РТП – начальники караулов (смен)', group: 'fireChiefRank'},
+    {value: 'РТП – начальники (зам.начальников) пожарных частей', label: 'РТП – начальники (зам.начальников) пожарных частей', group: 'fireChiefRank'},
+    {value: 'РТП – начальники (зам.начальников) отрядов ФПС', label: 'РТП – начальники (зам.начальников) отрядов ФПС', group: 'fireChiefRank'},
+    {value: 'РТП – начальники дежурных смен (старшие оперативные) служб пожаротушения', label: 'РТП – начальники дежурных смен (старшие оперативные) служб пожаротушения', group: 'fireChiefRank'},
+    {value: 'РТП – начальники управлений, отделов (отделений) организации пожаротушения и проведения АСР', label: 'РТП – начальники управлений, отделов (отделений) организации пожаротушения и проведения АСР', group: 'fireChiefRank'},
+    {value: 'РТП – начальники ГУ МЧС России, заместители начальников ГУ МЧС России по ГПС', label: 'РТП – начальники ГУ МЧС России, заместители начальников ГУ МЧС России по ГПС', group: 'fireChiefRank'}
+];
+
+const amountOfSmokeGroups = [
+    {value: '1 звено', label: '1 звено', group: 'amountOfSmokeGroups'},
+    {value: '2 звена', label: '2 звена', group: 'amountOfSmokeGroups'},
+    {value: '3 и более', label: '3 и более', group: 'amountOfSmokeGroups'},
+    {value: '1 звено 1 включение', label: '1 звено 1 включение', group: 'amountOfSmokeGroups'},
+    {value: '1 звено 2 включение', label: '1 звено 2 включение', group: 'amountOfSmokeGroups'},
+    {value: '1 звено 3 включение', label: '1 звено 3 включение', group: 'amountOfSmokeGroups'},
+    {value: '2 звено 1 включение', label: '2 звено 1 включение', group: 'amountOfSmokeGroups'},
+    {value: '2 звено 2 включение', label: '2 звено 2 включение', group: 'amountOfSmokeGroups'},
+    {value: '2 звено 3 включение', label: '2 звено 3 включение', group: 'amountOfSmokeGroups'},
+    {value: '3 звено 1 включение', label: '3 звено 1 включение', group: 'amountOfSmokeGroups'},
+    {value: '3 звено 2 включение', label: '3 звено 2 включение', group: 'amountOfSmokeGroups'},
+    {value: '3 звено 3 включение', label: '3 звено 3 включение', group: 'amountOfSmokeGroups'}
+];
+
+const extinguishingAgents = [
+    {value: 'Пожары, ликвидированные с применением водяных стволов', label: 'Пожары, ликвидированные с применением водяных стволов', group: 'extinguishingAgents'},
+    {value: 'Пожары, ликвидированные с применением пенных стволов', label: 'Пожары, ликвидированные с применением пенных стволов', group: 'extinguishingAgents'},
+    {value: 'Пожары, ликвидированные с применением порошковых стволов', label: 'Пожары, ликвидированные с применением порошковых стволов', group: 'extinguishingAgents'},
+    {value: 'Пожары, ликвидированные с комбинированным применением водяных, пенных или порошковых стволов', label: 'Пожары, ликвидированные с комбинированным применением водяных, пенных или порошковых стволов', group: 'extinguishingAgents'},
+    {value: 'Пожары, ликвидированные с применением роботизированных установок пожаротушения', label: 'Пожары, ликвидированные с применением роботизированных установок пожаротушения', group: 'extinguishingAgents'},
+    {value: 'Пожары, ликвидированные с применением огнетушителей', label: 'Пожары, ликвидированные с применением огнетушителей', group: 'extinguishingAgents'},
+    {value: 'Подручные средства', label: 'Подручные средства', group: 'extinguishingAgents'},
+    {value: 'Ликвидация до прибытия', label: 'Ликвидация до прибытия', group: 'extinguishingAgents'}
+];
+
+const usingHydrants = [
+    {value: 'Потушено пожаров с установкой на пожарный гидрант', label: 'Потушено пожаров с установкой на пожарный гидрант', group: 'usingHydrants'},
+    {value: 'Потушено пожаров с установкой на пожарный водоем', label: 'Потушено пожаров с установкой на пожарный водоем', group: 'usingHydrants'},
+    {value: 'Потушено пожаров с организацией подвоза воды', label: 'Потушено пожаров с организацией подвоза воды', group: 'usingHydrants'},
+    {value: 'Потушено пожаров с организацией подачи воды в перекачку', label: 'Потушено пожаров с организацией подачи воды в перекачку', group: 'usingHydrants'}
+];
+
+const locality = [
+    {value: 'Город', label: 'Город', group: 'locality'},
+    {value: 'Село', label: 'Село', group: 'locality'}
+];
+
+const fireRank = [
+    {value: '1', label: '1', group: 'fireRank'},
+    {value: '1 БИС', label: '1 БИС', group: 'fireRank'},
+    {value: '2', label: '2', group: 'fireRank'},
+    {value: '3', label: '3', group: 'fireRank'},
+    {value: '4', label: '4', group: 'fireRank'},
+];
+
 const groupedOptions = [
     {
         label: 'Пожарные части',
@@ -98,7 +172,8 @@ const groupedOptions = [
         label: 'Сообщение',
         options: message,
     },
-    { label: 'Районы города',
+    {
+        label: 'Районы города',
         options: district
     },
     {
@@ -108,6 +183,34 @@ const groupedOptions = [
     {
         label: 'Где был пожар',
         options: whereWasTheFire
+    },
+    {
+        label: 'АСР',
+        options: rescueWorks
+    },
+    {
+        label: 'РТП',
+        options: fireChiefRank
+    },
+    {
+        label: 'Работа ГДЗС',
+        options: amountOfSmokeGroups
+    },
+    {
+        label: 'Применение огнетушащих веществ',
+        options: extinguishingAgents
+    },
+    {
+        label: 'Использование ИНППВ',
+        options: usingHydrants
+    },
+    {
+        label: 'Город/Село',
+        options: locality
+    },
+    {
+        label: 'Ранг пожара',
+        options: fireRank
     }
 ];
 
@@ -118,11 +221,19 @@ class ReactSelect extends React.Component {
         message: '',
         district: '',
         destination: '',
-        whereWasTheFire: ''
-    }
+        whereWasTheFire: '',
+        rescueWorks: '',
+        fireChiefRank: '',
+        amountOfSmokeGroups: '',
+        extinguishingAgents: '',
+        usingHydrants: '',
+        locality: '',
+        fireRank: ''
+    };
 
     handleChange = (selectedOptions) => {
-        this.setState({ fireStation: selectedOptions
+        this.setState({
+            fireStation: selectedOptions
                 .filter((e) => e.group ==='stations')
                 .map((selectedOption) => selectedOption.value),
             message: selectedOptions
@@ -136,13 +247,35 @@ class ReactSelect extends React.Component {
                 .map((selectedOption) => selectedOption.value),
             whereWasTheFire: selectedOptions
                 .filter((e) => e.group === 'whereWasTheFire')
+                .map((selectedOption) => selectedOption.value),
+            rescueWorks: selectedOptions
+                .filter((e) => e.group === 'rescueWorks')
+                .map((selectedOption) => selectedOption.value),
+            fireChiefRank: selectedOptions
+                .filter((e) => e.group === 'fireChiefRank')
+                .map((selectedOption) => selectedOption.value),
+            amountOfSmokeGroups: selectedOptions
+                .filter((e) => e.group === 'amountOfSmokeGroups')
+                .map((selectedOption) => selectedOption.value),
+            extinguishingAgents: selectedOptions
+                .filter((e) => e.group === 'extinguishingAgents')
+                .map((selectedOption) => selectedOption.value),
+            usingHydrants: selectedOptions
+                .filter((e) => e.group === 'usingHydrants')
+                .map((selectedOption) => selectedOption.value),
+            locality: selectedOptions
+                .filter((e) => e.group === 'locality')
+                .map((selectedOption) => selectedOption.value),
+            fireRank: selectedOptions
+                .filter((e) => e.group === 'fireRank')
                 .map((selectedOption) => selectedOption.value)});
     }
 
-    handleFormSubmit = submitEvent => {
-        submitEvent.preventDefault()
+
+        handleFormSubmit = submitEvent => {
+        submitEvent.preventDefault();
         this.props.onSubmit(this.state)
-    }
+    };
     render(){
         return (
             <div className="navigation">
@@ -165,3 +298,4 @@ class ReactSelect extends React.Component {
 }
 
 export default ReactSelect;
+

@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Table from "./Table";
 import ReactSelect from "./ReactSelect";
 
-export default function SimpliestFilteredTable (props) {
+export default function SimplestFilteredTable (props) {
 
     const [fires, setFires] = useState ([]);
-    const { name, fireStation, message, district, destination, whereWasTheFire }  = props.match.params;
-    const objectWithProperties = { fireStation, message, district, destination, whereWasTheFire };
+    const { name, fireStation, message, district, destination, whereWasTheFire, rescueWorks,
+        fireChiefRank, amountOfSmokeGroups, extinguishingAgents, usingHydrants, locality,
+        fireRank }  = props.match.params;
+    const objectWithProperties = { fireStation, message, district, destination, whereWasTheFire, rescueWorks,
+        fireChiefRank, amountOfSmokeGroups, extinguishingAgents, usingHydrants, locality, fireRank };
     const encoded = encodeURI(`/api/get/${name}`);
     useEffect((api) => {
         if (checkProperties(objectWithProperties)) {
@@ -17,7 +20,14 @@ export default function SimpliestFilteredTable (props) {
                     message,
                     district,
                     destination,
-                    whereWasTheFire
+                    whereWasTheFire,
+                    rescueWorks,
+                    fireChiefRank,
+                    amountOfSmokeGroups,
+                    extinguishingAgents,
+                    usingHydrants,
+                    locality,
+                    fireRank
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -40,11 +50,11 @@ export default function SimpliestFilteredTable (props) {
     const result = <h3>Итого выездов: {fires.length}</h3>;
     return (
         <>
-            <div class="box">
-                <div class="box1">
+            <div className="box">
+                <div className="box1">
                     <ReactSelect onSubmit={(state) => fetchTable({setFires, name, ...state})}/>
                 </div>
-                <div class="box2" >
+                <div className="box2" >
                     {result}
                 </div>
             </div>
@@ -57,6 +67,8 @@ export default function SimpliestFilteredTable (props) {
 }
 
 const fetchTable = ({fireStation = "", message = "", district = "", destination = "", whereWasTheFire = "",
+                        rescueWorks = "", fireChiefRank = "", amountOfSmokeGroups = "",
+                        extinguishingAgents = "", usingHydrants = "", locality = "", fireRank = "",
                         name, setFires}) => {
     const encoded = encodeURI(`/api/get/${name}`);
     fetch(encoded, {
@@ -66,7 +78,14 @@ const fetchTable = ({fireStation = "", message = "", district = "", destination 
             message,
             district,
             destination,
-            whereWasTheFire
+            whereWasTheFire,
+            rescueWorks,
+            fireChiefRank,
+            amountOfSmokeGroups,
+            extinguishingAgents,
+            usingHydrants,
+            locality,
+            fireRank
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"

@@ -9,8 +9,8 @@ export default function MyNavbar () {
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse is="basic-navbar-nav"/>
             <Nav>
-                <NavLink className="d-inline p-2 bg-dark text-white" to={"/file"}>Загрузить файл</NavLink>
-                <NavLink className="d-inline p-2 bg-dark text-white" to={"/fileList"}>Список файлов</NavLink>
+                <NavLink className="nlink" to={"/file"}>Загрузить файл</NavLink>
+                <NavLink className="nlink" to={"/fileList"}>Список файлов</NavLink>
             </Nav>
         </Navbar>
     )
