@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 
 class File extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
         selectedFile: null,
