@@ -5,11 +5,32 @@ import ReactSelect from "./ReactSelect";
 export default function SimplestFilteredTable (props) {
 
     const [fires, setFires] = useState ([]);
-    const { name, fireStation, message, district, destination, whereWasTheFire, rescueWorks,
-        fireChiefRank, amountOfSmokeGroups, extinguishingAgents, usingHydrants, locality,
-        fireRank }  = props.match.params;
-    const objectWithProperties = { fireStation, message, district, destination, whereWasTheFire, rescueWorks,
-        fireChiefRank, amountOfSmokeGroups, extinguishingAgents, usingHydrants, locality, fireRank };
+    const { name,
+            fireStation,
+            message,
+            district,
+            destination,
+            whereWasTheFire,
+            rescueWorks,
+            fireChiefRank,
+            amountOfSmokeGroups,
+            extinguishingAgents,
+            usingHydrants,
+            locality,
+            fireRank }  = props.match.params;
+    const objectWithProperties = {
+            fireStation,
+            message,
+            district,
+            destination,
+            whereWasTheFire,
+            rescueWorks,
+            fireChiefRank,
+            amountOfSmokeGroups,
+            extinguishingAgents,
+            usingHydrants,
+            locality,
+            fireRank };
     const encoded = encodeURI(`/api/get/${name}`);
     useEffect((api) => {
         if (checkProperties(objectWithProperties)) {
@@ -66,10 +87,20 @@ export default function SimplestFilteredTable (props) {
     )
 }
 
-const fetchTable = ({fireStation = "", message = "", district = "", destination = "", whereWasTheFire = "",
-                        rescueWorks = "", fireChiefRank = "", amountOfSmokeGroups = "",
-                        extinguishingAgents = "", usingHydrants = "", locality = "", fireRank = "",
-                        name, setFires}) => {
+const fetchTable = ({fireStation = "",
+                        message = "",
+                        district = "",
+                        destination = "",
+                        whereWasTheFire = "",
+                        rescueWorks = "",
+                        fireChiefRank = "",
+                        amountOfSmokeGroups = "",
+                        extinguishingAgents = "",
+                        usingHydrants = "",
+                        locality = "",
+                        fireRank = "",
+                        name,
+                        setFires}) => {
     const encoded = encodeURI(`/api/get/${name}`);
     fetch(encoded, {
         method: "POST",
