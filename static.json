@@ -1,0 +1,7 @@
+{
+  "proxies": {
+    "/api/": {
+      "origin": "https://back-for-app.herokuapp.com/"
+    }
+  }
+}
