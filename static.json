@@ -1,7 +1,6 @@
 {
   "root": "build/",
   "routes": {
-    "/": "index.html",
-    "/api/**": "https://back-for-app.herokuapp.com/"
+    "/": "index.html"
   }
 }
