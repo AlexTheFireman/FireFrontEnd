@@ -3,10 +3,9 @@
   "routes": {
     "/**": "index.html"
   },
-  "https_only": true,
-  "proxies": {
+  "redirects": {
     "/api/": {
-      "origin": "https://back-for-app.herokuapp.com"
+      "url": "https://back-for-app.herokuapp.com/"
     }
   }
 }
