@@ -33,7 +33,7 @@
   "proxy": {
     "/api": {
       "target": "https://back-for-app.herokuapp.com/",
-      "changeOrigin" : true
+      "changeOrigin": true
     }
   },
   "scripts": {
