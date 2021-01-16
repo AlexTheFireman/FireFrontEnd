@@ -17,7 +17,7 @@ export default function App() {
                 <MyNavbar/>
                 <Switch>
                     <Route path='/file' component={File}/>
-                    <Route path='/fileList' component={FileList}/>
+                    <Route path='/filelist' component={FileList}/>
                     <Route path='/tables/:name' component={FilteredTable}/>
                 </Switch>
             </div>
