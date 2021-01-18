@@ -4,7 +4,7 @@ module.exports = function(app) {
         '/api',
         createProxyMiddleware({
             target: 'https://back-for-app.herokuapp.com',
-            changeOrigin: true,
+            changeOrigin: false,
         })
     );
 };
