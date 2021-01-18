@@ -26,9 +26,24 @@ export default function FileList () {
         });
     };
 
+    function deleteAllHandler(){
+        console.log('delete all files');
+        fetch(`/api/delete/all`, {
+            method: 'DELETE',
+        }).then(() => {
+            fetch("/api/get/all")
+                .then(response => response.json())
+                .then(data => {
+                    setFiles(data);
+                });
+        });
+    };
     const body = files.map((fileName) => {
         return (
+
             <tr key={fileName}>
+                <button className="listBox2 myButton deleteButton"
+                onClick={() => deleteAllHandler()}>Удалить всё</button>
                 <td>
                     <div class="box">
                         <Link class="listBox1" to={`/tables/${fileName}`}>{fileName}</Link>
