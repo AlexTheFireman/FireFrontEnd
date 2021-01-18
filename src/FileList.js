@@ -26,18 +26,6 @@ export default function FileList () {
         });
     };
 
-    function deleteAllHandler(){
-        console.log('delete all files');
-        fetch(`/api/delete/all`, {
-            method: 'DELETE',
-        }).then(() => {
-            fetch("/api/get/all")
-                .then(response => response.json())
-                .then(data => {
-                    setFiles(data);
-                });
-        });
-    };
     const body = files.map((fileName) => {
         return (
 
