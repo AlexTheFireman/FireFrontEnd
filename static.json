@@ -5,7 +5,7 @@
 	},
 	"proxies": {
 		"/api/": {
-			"origin": "https://back-for-app.herokuapp.com"
+			"origin": "https://back-for-app.herokuapp.com/api"
 		}
 	}
 }
