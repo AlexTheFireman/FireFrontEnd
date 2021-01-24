@@ -1,52 +1,68 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 
-class File extends Component {
+export default function File() {
+    const [selectedFile, setSelectedFile] = useState('');
+    const [isFileSelected, setIsFileSelected] = useState(false);
+    const [answer, setAnswer] = useState('');
 
-    state = {
-        selectedFile: null,
-        responseFromServer: null
+    const fileSelectedHandler = event => {
+        setSelectedFile(event.target.files[0]);
+        setIsFileSelected(true)
     };
 
-    fileSelectedHandler = event => {
-        this.setState({
-            selectedFile: event.target.files[0]
-        })
-    };
-
-    fileUploadHandler = () => {
-        const formData = new FormData();
-        formData.append('file', this.state.selectedFile);
-        fetch("/api/upload", {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.text())
-            .then(response => this.setState({responseFromServer: response})
-            )
-    };
-
-    render() {
-              return (
-                    <div align="center">
-                        <table>
-                            <tr>
-                                <td>Выберите файл:</td>
-                                <td><input type="file" onChange={this.fileSelectedHandler}/></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <button onClick={this.fileUploadHandler}>Загрузить</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <td>{this.state.responseFromServer}</td>
-                    </div>
-              );
+     function getValue(answer) {
+        switch (answer) {
+            case 'SUCCESS':
+                return "Файл успешно загружен";
+            case 'CHECK_FILE_EXTENSION':
+                return "Система принимает файлы исключительно с расширением \"xls\" или \"xlsx\". " +
+                    "Пожалуйста, проверьте расширение файла!";
+            case 'FILE_ALREADY_EXISTS':
+                return "Фвйл с таким именем уже содержится в базе данных";
+            default:
+                return "Файл не выбран";
         }
     }
 
-export default File
+    const fileUploadHandler = () => {
+        if (isFileSelected === true) {
+            const formData = new FormData();
+            formData.append("file", selectedFile);
+            fetch("/api/upload", {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(response => setAnswer(response))
+
+        } else {
+            setAnswer('NO');
+        }
+    };
+
+    return (
+          <div align="center">
+              <table>
+                  <tr>
+                      <td>Выберите файл:</td>
+                      <td><input type="file" onChange={fileSelectedHandler}/></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td>
+                          <button onClick={fileUploadHandler}>Загрузить</button>
+                      </td>
+                  </tr>
+              </table>
+              <td>
+                  <h1>{getValue(answer)}</h1>
+              </td>
+          </div>
+    );
+}
+
+
+
 
 
 
