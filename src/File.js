@@ -7,7 +7,8 @@ export default function File() {
 
     const fileSelectedHandler = event => {
         setSelectedFile(event.target.files[0]);
-        setIsFileSelected(true)
+        setIsFileSelected(true);
+        setAnswer("Файл готов к загрузке в систему");
     };
 
      function getValue(answer) {
