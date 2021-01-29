@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     BrowserRouter,
@@ -17,7 +17,7 @@ export default function App() {
                 <MyNavbar/>
                 <Switch>
                     <Route path='/file' component={File}/>
-                    <Route path='/filelist' component={FileList}/>
+                    <Route path='/fileList' component={FileList}/>
                     <Route path='/tables/:name' component={FilteredTable}/>
                 </Switch>
             </div>

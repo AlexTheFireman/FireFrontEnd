@@ -79,7 +79,7 @@ export default function SimplestFilteredTable (props) {
                     {result}
                 </div>
             </div>
-            <table className="table-sm table-hover table-striped">
+            <table className="table-hover table-striped">
                 <Table fires = {fires}/>
 
             </table>

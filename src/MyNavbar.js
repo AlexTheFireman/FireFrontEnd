@@ -11,6 +11,7 @@ export default function MyNavbar () {
             <Nav>
                 <NavLink className="nlink" to={"/file"}>Загрузить файл</NavLink>
                 <NavLink className="nlink" to={"/fileList"}>Список файлов</NavLink>
+
             </Nav>
         </Navbar>
     )

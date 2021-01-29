@@ -1,13 +1,13 @@
 import React from 'react'
 import Select from 'react-select';
 
-const fireStations = [
-    { value: '1 ПСЧ', label: '1 ПСЧ', group: 'stations'},
-    { value: '2 ПСЧ', label: '2 ПСЧ', group: 'stations'},
-    { value: '3 ПСЧ', label: '3 ПСЧ', group: 'stations'},
-    { value: '4 ПСЧ', label: '4 ПСЧ', group: 'stations'},
-    { value: '5 ПСЧ', label: '5 ПСЧ', group: 'stations'},
-    { value: '6 ПСЧ', label: '6 ПСЧ', group: 'stations'},
+const fireStation = [
+    { value: '1 ПСЧ', label: '1 ПСЧ', group: 'fireStation'},
+    { value: '2 ПСЧ', label: '2 ПСЧ', group: 'fireStation'},
+    { value: '3 ПСЧ', label: '3 ПСЧ', group: 'fireStation'},
+    { value: '4 ПСЧ', label: '4 ПСЧ', group: 'fireStation'},
+    { value: '5 ПСЧ', label: '5 ПСЧ', group: 'fireStation'},
+    { value: '6 ПСЧ', label: '6 ПСЧ', group: 'fireStation'},
 
 ];
 
@@ -166,7 +166,7 @@ const fireRank = [
 const groupedOptions = [
     {
         label: 'Пожарные части',
-        options: fireStations,
+        options: fireStation,
     },
     {
         label: 'Сообщение',
@@ -234,7 +234,7 @@ class ReactSelect extends React.Component {
     handleChange = (selectedOptions) => {
         this.setState({
             fireStation: selectedOptions
-                .filter((e) => e.group ==='stations')
+                .filter((e) => e.group ==='fireStation')
                 .map((selectedOption) => selectedOption.value),
             message: selectedOptions
                 .filter((e) => e.group === 'message')
@@ -269,13 +269,14 @@ class ReactSelect extends React.Component {
             fireRank: selectedOptions
                 .filter((e) => e.group === 'fireRank')
                 .map((selectedOption) => selectedOption.value)});
-    }
+    };
 
 
         handleFormSubmit = submitEvent => {
         submitEvent.preventDefault();
         this.props.onSubmit(this.state)
     };
+
     render(){
         return (
             <div className="navigation">

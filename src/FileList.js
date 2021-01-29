@@ -31,7 +31,7 @@ export default function FileList () {
 
             <tr key={fileName}>
                 <td>
-                    <div class="box">
+                    <div class="listBox">
                         <Link class="listBox1" to={`/tables/${fileName}`}>{fileName}</Link>
                         <button className="listBox2 myButton deleteButton"
                                 onClick={() => deleteHandler(fileName)}>Удалить</button>
