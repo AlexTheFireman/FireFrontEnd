@@ -271,8 +271,7 @@ class ReactSelect extends React.Component {
                 .map((selectedOption) => selectedOption.value)});
     };
 
-
-        handleFormSubmit = submitEvent => {
+    handleFormSubmit = submitEvent => {
         submitEvent.preventDefault();
         this.props.onSubmit(this.state)
     };
@@ -284,7 +283,6 @@ class ReactSelect extends React.Component {
                     <Select
                         closeMenuOnSelect={false}
                         onChange={this.handleChange}
-
                         options={groupedOptions}
                         autoFocus={true}
                         isMulti

@@ -11,7 +11,7 @@ export default function File() {
         setAnswer("Файл готов к загрузке в систему");
     };
 
-     function getValue(answer) {
+     function transitional(answer) {
          switch (answer) {
              case "SUCCESS":
                  return "Файл успешно загружен";
@@ -34,7 +34,7 @@ export default function File() {
                 body: formData
             })
                 .then(response => response.json())
-                .then(response => setAnswer(getValue(response)))
+                .then(response => setAnswer(transitional(response)))
         } else {
             setAnswer('File not chosen');
         }

@@ -24,8 +24,8 @@ table {
 }
 
 .input-file{
-  width:.1px;
-  height:.1px;
+  width: 1px;
+  height: 1px;
   opacity:0;
   overflow:hidden;
   position:absolute;
@@ -51,6 +51,7 @@ table {
 
 .nlink {
   display: inline;
+
   background-color: black;
   text-decoration: none;
   color: white;
@@ -60,11 +61,28 @@ table {
   margin-left: 10px;
 }
 
+.logout {
+  width: 60px;
+  position: absolute;
+  margin-left: auto;
+  right: 1.3em;
+}
+
 .nlink:hover {
   background-color: #555555;
   text-decoration: none;
   color: white;
   }
+
+.userForm {
+  text-align: center;
+  width: 600px;
+}
+
+.userForm h4 {
+  margin-bottom: 30px;
+}
+
 
 
 
