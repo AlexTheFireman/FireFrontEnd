@@ -7,7 +7,7 @@ const fireStation = [
     { value: '3 ПСЧ', label: '3 ПСЧ', group: 'fireStation'},
     { value: '4 ПСЧ', label: '4 ПСЧ', group: 'fireStation'},
     { value: '5 ПСЧ', label: '5 ПСЧ', group: 'fireStation'},
-    { value: '6 ПСЧ', label: '6 ПСЧ', group: 'fireStation'},
+    { value: '6 ПСЧ', label: '6 ПСЧ', group: 'fireStation'}
 
 ];
 
@@ -160,7 +160,7 @@ const fireRank = [
     {value: '1 БИС', label: '1 БИС', group: 'fireRank'},
     {value: '2', label: '2', group: 'fireRank'},
     {value: '3', label: '3', group: 'fireRank'},
-    {value: '4', label: '4', group: 'fireRank'},
+    {value: '4', label: '4', group: 'fireRank'}
 ];
 
 const groupedOptions = [

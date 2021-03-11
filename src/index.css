@@ -110,7 +110,7 @@ code {
   border:2px solid #555
 }
 
-.btn-tertiary:hover,.example-2 .btn-tertiary:focus{
+.btn-tertiary:hover, .btn-tertiary:focus{
   color:#888;
   border-color:#888
 }

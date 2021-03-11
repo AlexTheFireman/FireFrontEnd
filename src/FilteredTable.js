@@ -31,7 +31,7 @@ export default function SimplestFilteredTable (props) {
             usingHydrants,
             locality,
             fireRank };
-    const encoded = encodeURI(`/api/get/${name}`);
+    const encoded = encodeURI(`/api/file/get/${name}`);
     useEffect((api) => {
         if (checkProperties(objectWithProperties)) {
             fetch(encoded, {
@@ -100,7 +100,7 @@ const fetchTable = ({fireStation = "",
                         fireRank = "",
                         name,
                         setFires}) => {
-    const encoded = encodeURI(`/api/get/${name}`);
+    const encoded = encodeURI(`/api/file/get/${name}`);
     fetch(encoded, {
         method: "POST",
         body: JSON.stringify({

@@ -11,7 +11,7 @@ import MyNavbar from './MyNavbar.js';
 import File from './File.js';
 import FileList from './FileList.js';
 import FilteredTable from './FilteredTable';
-import LoginForm from './LoginForm';
+import UserList from './UserList';
 import UserForm from "./UserForm";
 export default function App() {
     return (
@@ -19,14 +19,11 @@ export default function App() {
             <div>
                 <MyNavbar/>
                 <Switch>
-                    {/*<Route exact path='/'>*/}
-                    {/*    <Redirect to='/login' />*/}
-                    {/*</Route>*/}
-                    <Route path='/login' component={LoginForm}/>
                     <Route path='/file' component={File}/>
                     <Route path='/fileList' component={FileList}/>
                     <Route path='/tables/:name' component={FilteredTable}/>
                     <Route path='/userForm' component={UserForm}/>
+                    <Route path='/userList' component={UserList}/>
                 </Switch>
             </div>
         </BrowserRouter>
