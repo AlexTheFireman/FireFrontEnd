@@ -29,7 +29,7 @@ export default function File() {
         if (isFileSelected === true) {
             const formData = new FormData();
             formData.append("file", selectedFile);
-            fetch("/api/upload", {
+            fetch("/api/file/upload", {
                 method: 'POST',
                 body: formData
             })
