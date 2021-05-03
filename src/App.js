@@ -1,18 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     BrowserRouter,
     Switch,
-    Route,
-    Redirect
+    Route
 } from "react-router-dom";
 import MyNavbar from './MyNavbar.js';
-import File from './File.js';
-import FileList from './FileList.js';
-import FilteredTable from './FilteredTable';
-import UserList from './UserList';
-import UserForm from "./UserForm";
+import File from './fileList/File.js';
+import FileList from './fileList/FileList.js';
+import FilteredTable from './table/FilteredTable';
+
 export default function App() {
     return (
         <BrowserRouter>
@@ -22,12 +20,12 @@ export default function App() {
                     <Route path='/file' component={File}/>
                     <Route path='/fileList' component={FileList}/>
                     <Route path='/tables/:name' component={FilteredTable}/>
-                    <Route path='/userForm' component={UserForm}/>
-                    <Route path='/userList' component={UserList}/>
                 </Switch>
             </div>
         </BrowserRouter>
+
     );
+
 }
 
 
