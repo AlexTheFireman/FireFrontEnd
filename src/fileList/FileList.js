@@ -5,7 +5,7 @@ export default function FileList () {
     const [files, setFiles] = useState([]);
 
     useEffect((api) => {
-        fetch("/api/get/all")
+        fetch("/api/file/get/all")
             .then(response => response.json())
             .then(data => {
                 setFiles(data);
@@ -14,24 +14,23 @@ export default function FileList () {
 
     function deleteHandler(fileName) {
         console.log('delete ' + fileName);
-        fetch(`/api/delete/${fileName}`, {
+        fetch(`/api/file/delete/${fileName}`, {
             method: 'DELETE',
 
         }).then(() => {
-            fetch("/api/get/all")
+            fetch("/api/file/get/all")
                 .then(response => response.json())
                 .then(data => {
                     setFiles(data);
                 });
         });
-    };
+    }
 
     const body = files.map((fileName) => {
         return (
-
             <tr key={fileName}>
                 <td>
-                    <div class="box">
+                    <div className="listBox">
                         <Link class="listBox1" to={`/tables/${fileName}`}>{fileName}</Link>
                         <button className="listBox2 myButton deleteButton"
                                 onClick={() => deleteHandler(fileName)}>Удалить</button>
@@ -44,7 +43,7 @@ export default function FileList () {
         <table className="table table-bordered table-sm table-hover table-striped">
             <thead className="thead-inverse">
             <tr>
-                <th className="bordered">Files</th>
+                <th className="bordered">Файлы</th>
             </tr>
             </thead>
             <tbody>

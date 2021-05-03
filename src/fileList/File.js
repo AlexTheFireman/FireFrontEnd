@@ -11,18 +11,18 @@ export default function File() {
         setAnswer("Файл готов к загрузке в систему");
     };
 
-     function getValue(answer) {
-        switch (answer) {
-            case 'SUCCESS':
-                return "Файл успешно загружен";
-            case 'CHECK_FILE_EXTENSION':
-                return "Система принимает файлы исключительно с расширением \"xls\" или \"xlsx\". " +
-                    "Пожалуйста, проверьте расширение файла!";
-            case 'FILE_ALREADY_EXISTS':
-                return "Файл с таким именем уже содержится в базе данных";
-            default:
-                return "Файл не выбран";
-        }
+     function transitional(answer) {
+         switch (answer) {
+             case "SUCCESS":
+                 return "Файл успешно загружен";
+             case "CHECK_FILE_EXTENSION":
+                 return "Система принимает файлы исключительно с расширением \"xls\" или \"xlsx\". " +
+                     "Пожалуйста, проверьте расширение файла!";
+             case "FILE_ALREADY_EXISTS":
+                 return "Файл с таким именем уже содержится в базе данных";
+             default:
+                 return "Файл не выбран";
+         }
     }
 
     const fileUploadHandler = () => {
@@ -33,11 +33,10 @@ export default function File() {
                 method: 'POST',
                 body: formData
             })
-                .then(response => response.text())
-                .then(response => setAnswer(response))
-
+                .then(response => response.json())
+                .then(response => setAnswer(transitional(response)))
         } else {
-            setAnswer('NO');
+            setAnswer('File not chosen');
         }
     };
 
@@ -56,7 +55,7 @@ export default function File() {
                   </tr>
               </table>
               <td>
-                  <h1>{getValue(answer)}</h1>
+                  <h1>{answer}</h1>
               </td>
           </div>
     );

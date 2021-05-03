@@ -1,5 +1,5 @@
-import React from "react";
-import './App.css';
+import React, {useState} from "react";
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     BrowserRouter,
@@ -7,9 +7,10 @@ import {
     Route
 } from "react-router-dom";
 import MyNavbar from './MyNavbar.js';
-import File from './File.js';
-import FileList from './FileList.js';
-import FilteredTable from './FilteredTable';
+import File from './fileList/File.js';
+import FileList from './fileList/FileList.js';
+import FilteredTable from './table/FilteredTable';
+
 export default function App() {
     return (
         <BrowserRouter>
@@ -17,12 +18,14 @@ export default function App() {
                 <MyNavbar/>
                 <Switch>
                     <Route path='/file' component={File}/>
-                    <Route path='/filelist' component={FileList}/>
+                    <Route path='/fileList' component={FileList}/>
                     <Route path='/tables/:name' component={FilteredTable}/>
                 </Switch>
             </div>
         </BrowserRouter>
+
     );
+
 }
 
 
